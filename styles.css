@@ -1,89 +1,105 @@
-/* Reset de estilos */
-* {
+body {
+    font-family: Arial, sans-serif; 
+    color: #ffffff; 
+    background-color: #1f1f1f; 
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* Definición de la fuente personalizada */
-@font-face {
-    font-family: 'Monocraft';
-    src: url('./Monocraft.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Monocraft', Arial, sans-serif; /* Aplicar la fuente personalizada */
-    background-color: #04092f;
-    color: #fbf6d0;
+#content {
     padding: 20px;
+    max-width: 1200px; 
+    margin: 0 auto; 
 }
 
 header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    color: #9c27b0; 
+    font-size: 24px; 
 }
 
 input[type="text"] {
-    width: 100%;
-    padding: 1em;
+    padding: 10px;
+    border: none;
     border-radius: 5px;
-    border: 1px solid #444;
     background-color: #333;
-    color: #fbf6d0;
-    font-family: 'Monocraft', Arial, sans-serif; /* Aplicar la fuente personalizada */
-    font-size: 1em;
+    color: #ffffff;
     outline: none;
+    width: 100%;
+    max-width: 300px;
 }
 
 input[type="text"]::placeholder {
     color: #999;
 }
 
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #9c27b0; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7b1fa2; 
+}
+
+#countryCards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
 }
 
 .card {
-    background-color: #333;
-    border-radius: 5px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    flex: 0 0 calc(33.33% - 20px); 
+    background-color: #333; 
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    max-width: 300px; 
+    box-sizing: border-box; 
 }
 
 .card h2 {
-    font-size: 1.5em;
+    color: #9c27b0; 
     margin-bottom: 10px;
+    font-size: 18px; 
 }
 
 .card p {
-    margin-bottom: 5px;
+    margin: 5px 0;
+    font-size: 14px; 
 }
 
 .card img {
-    width: 100%;
+    width: 100%; 
+    height: auto; 
     border-radius: 5px;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .card ul {
-    margin-top: 10px;
+    list-style-type: none;
+    padding: 0;
 }
 
 .card ul li {
-    list-style: none;
+    margin-bottom: 5px;
+    font-size: 14px; 
 }
 
 .card ul li a {
-    color: #ddd;
+    color: #9c27b0; 
     text-decoration: none;
 }
 
@@ -91,50 +107,18 @@ main {
     text-decoration: underline;
 }
 
-@media screen and (max-width: 1024px) {
-    h1 {
-        font-size: 2em;
-    }
-
-    .card h2 {
-        font-size: 1.3em;
-    }
-
-    input[type="text"] {
-        width: calc(100% - 40px);
-    }
-}
-
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 1.8em;
-    }
-
-    .card h2 {
-        font-size: 1.1em;
-    }
-
-    input[type="text"] {
-        width: calc(100% - 20px);
-    }
-
-    main {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-}
-
+/* Loader */
 #loader {
-    border: 8px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 8px solid #3498db;
-    width: 50px;
-    height: 50px;
-    animation: spin 1s linear infinite;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
-    margin-top: -25px;
-    margin-left: -25px;
+    transform: translate(-50%, -50%);
+    border: 8px solid #ffffff; 
+    border-radius: 50%;
+    border-top: 8px solid #9c27b0; 
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
@@ -142,22 +126,43 @@ main {
     100% { transform: rotate(360deg); }
 }
 
-#content {
-    display: none;
+/* Fuente Monocraft */
+@font-face {
+    font-family: 'Monocraft';
+    src: url('./Monocraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-#fontChangeButton {
-    padding: 6px 12px;
-    font-size: 12px;
-    background-color: #f0f0f0;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-}
+/* Media queries para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-#fontChangeButton:hover {
-    background-color: #e0e0e0;
-    color: #222;
+    input[type="text"] {
+        max-width: 100%; 
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 20px); 
+    }
+
+    .card h2 {
+        font-size: 16px; 
+    }
+
+    .card p,
+    .card ul li {
+        font-size: 12px; 
+    }
+
+    h1 {
+        font-size: 20px; 
+    }
+
+    #countryCards {
+        justify-content: center; /* Center align cards */
+    }
 }
