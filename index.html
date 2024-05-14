@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Encuentra información detallada sobre países de todo el mundo. Capital, región, población, área, idioma, moneda y más.">
+  <meta name="keywords"
+    content="países, países del mundo, información de países, capitales, regiones, poblaciones, áreas, monedas">
+  <meta name="author" content="Jolly">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Buscar Países">
+  <meta property="og:description"
+    content="Encuentra información detallada sobre países de todo el mundo. Capital, región, población, área, idioma, moneda y más.">
+  <meta property="og:image" content="https://flagcdn.com/w320/mx.png">
+  <meta property="og:url" content="https://paises.formen.cc">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="https://flagcdn.com/w320/vc.png">
+  <meta name="twitter:title" content="Buscar Países">
+  <meta name="twitter:description"
+    content="Encuentra información detallada sobre países de todo el mundo. Capital, región, población, área, idioma, moneda y más.">
+  <meta name="twitter:image" content="https://flagcdn.com/w320/vc.png">
+
+  <title>Buscar Países</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/7f25aa038c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="loader"></div>
+  <div id="content" style="display:none;">
+    <header>
+        <h1><i class="fas fa-globe"></i> Buscar Países</h1>
+        <input type="text" id="searchInput" placeholder="Buscar país...">
+        <button id="fontChangeButton">Cambiar Fuente</button>
+    </header>
+
+    <main id="countryCards">
+      <!-- Aquí se mostrarán las tarjetas de los países -->
+    </main>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+
+</html>

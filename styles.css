@@ -1,0 +1,163 @@
+/* Reset de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definición de la fuente personalizada */
+@font-face {
+    font-family: 'Monocraft';
+    src: url('./Monocraft.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Monocraft', Arial, sans-serif; /* Aplicar la fuente personalizada */
+    background-color: #04092f;
+    color: #fbf6d0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1em;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #fbf6d0;
+    font-family: 'Monocraft', Arial, sans-serif; /* Aplicar la fuente personalizada */
+    font-size: 1em;
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.card ul {
+    margin-top: 10px;
+}
+
+.card ul li {
+    list-style: none;
+}
+
+.card ul li a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.card ul li a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .card h2 {
+        font-size: 1.3em;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 40px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .card h2 {
+        font-size: 1.1em;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 20px);
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+#loader {
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -25px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#content {
+    display: none;
+}
+
+#fontChangeButton {
+    padding: 6px 12px;
+    font-size: 12px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#fontChangeButton:hover {
+    background-color: #e0e0e0;
+    color: #222;
+}
