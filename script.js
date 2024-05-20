@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const countryCards = document.getElementById("countryCards");
     const loader = document.getElementById("loader");
     const content = document.getElementById("content");
+    const themeStylesheet = document.getElementById("themeStylesheet");
+    const toggleThemeButton = document.getElementById("toggleThemeButton");
 
     let allCountries = []; // Variable para almacenar todos los países
 
@@ -91,4 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
             errorMessage.remove();
         }, 5000); // Remove after 5 seconds
     }
+
+    // Cambiar tema entre claro y oscuro
+    toggleThemeButton.addEventListener("click", function() {
+        const currentTheme = themeStylesheet.getAttribute("href");
+        const newTheme = currentTheme === "light.css" ? "dark.css" : "light.css";
+        themeStylesheet.setAttribute("href", newTheme);
+    });
 });
